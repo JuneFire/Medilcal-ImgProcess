@@ -1,0 +1,31 @@
+server:
+  port: 9090
+
+spring:
+  datasource:
+    username: root
+    password: root
+    url: jdbc:mysql:///medicalImg
+  redis:
+    port: 6379
+    host: localhost
+  servlet:
+    multipart:
+      max-file-size: 10MB  #  文件上传的上限
+
+file:
+  ip: localhost
+
+logging:
+  level:
+    com.medical: debug
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl         # 开启sql日志
+  global-config:
+    db-config:
+      logic-delete-field: deleted
+      logic-not-delete-value: 0
+      logic-delete-value: 1
+
